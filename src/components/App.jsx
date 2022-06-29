@@ -48,7 +48,6 @@ export default class App extends Component {
                 good={this.state.good}
                 neutral={this.state.neutral}
                 bad={this.state.bad}
-                test={this.state.test}
                 total={this.countTotalFeedback()}
                 positivePercentage={this.countPositiveFeedbackPercentage()}
               />
