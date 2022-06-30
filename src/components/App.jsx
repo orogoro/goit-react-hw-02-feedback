@@ -25,18 +25,19 @@ export default class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return this.state.good === 0
-      ? 100 - 100 * ((this.state.bad + this.state.neutral) / 4)
-      : 100 -
-          ((this.state.bad + this.state.neutral) / this.countTotalFeedback()) *
-            100;
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    // return this.state.good === 0
+    //   ? 100 - 100 * ((this.state.bad + this.state.neutral) / 4)
+    //   : 100 -
+    //       ((this.state.bad + this.state.neutral) / this.countTotalFeedback()) *
+    //         100;
   };
 
   render() {
     const option = Object.keys(this.state);
     return (
       <div className="container">
-        <Section title={'Please leave feadback'}>
+        <Section title="Please leave feadback">
           <FeedbackOptions
             options={option}
             onLeaveFeedback={this.onLeaveFeedback}

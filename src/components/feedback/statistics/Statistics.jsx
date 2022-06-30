@@ -16,7 +16,7 @@ export default function FeedbackOptions({
       <li>Total: {total}</li>
       <li>
         Positive feedback:
-        {total === 0 ? 100 : Math.round(positivePercentage)}%
+        {positivePercentage}%
       </li>
     </StatisticsList>
   );
